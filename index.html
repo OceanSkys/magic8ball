@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./js/main.js"></script>
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Magic 8 Ball</title>
+</head>
+<body>
+    <form>
+        <label for="question" style="margin-right: 1rem;">Ask me anything!</label><br>
+        <input type="text" style="margin-right: 1rem;" id="question" name="question"><br>
+        <input type="button" onclick="ask()" class="buty" type="submit" value="Ask">
+    </form>
+    <div id="answers">
+        <img src="./img/magic8ball_start.png" name="canvas" style="width: 550px">
+    </div>
+</body>
+</html>

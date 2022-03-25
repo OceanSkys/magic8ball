@@ -1,0 +1,36 @@
+body {
+    background-color: aqua;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+}
+#answers {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+}
+.animate {
+    outline-color: red;
+    /* also need animation and -moz-animation */
+    -webkit-animation: shake .5s linear;
+  }
+  /* also need keyframes and -moz-keyframes */
+  @-webkit-keyframes shake {
+    8%, 41% {
+        -webkit-transform: translateX(-30px);
+    }
+    25%, 58% {
+        -webkit-transform: translateX(30px);
+    }
+    75% {
+        -webkit-transform: translateX(-10px);
+    }
+    92% {
+        -webkit-transform: translateX(10px);
+    }
+    0%, 100% {
+        -webkit-transform: translateX(0);
+    }
+  }
