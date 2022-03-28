@@ -1,31 +1,42 @@
 body {
     background-color: aqua;
 }
-
 form {
     display: flex;
     justify-content: center;
 }
+/* Magic 8 ball display area */
 #answers {
-    margin-top: 3rem;
+    margin-top: 1rem;
     display: flex;
     justify-content: center;
 }
+/* Animation for Magic 8 Ball */
 .animate {
     outline-color: red;
     /* also need animation and -moz-animation */
-    -webkit-animation: shake .5s linear;
+    -webkit-animation: shake .7s linear;
+    
   }
   /* also need keyframes and -moz-keyframes */
   @-webkit-keyframes shake {
     8%, 41% {
-        -webkit-transform: translateX(-30px);
+        -webkit-transform: translateX(-50px);
+    }
+    8%, 41% {
+        -webkit-transform: translatey(-100px);
     }
     25%, 58% {
-        -webkit-transform: translateX(30px);
+        -webkit-transform: translateX(50px);
+    }
+    25%, 58% {
+        -webkit-transform: translatey(30px);
     }
     75% {
         -webkit-transform: translateX(-10px);
+    }
+    75% {
+        -webkit-transform: translatey(-10px);
     }
     92% {
         -webkit-transform: translateX(10px);
@@ -34,3 +45,42 @@ form {
         -webkit-transform: translateX(0);
     }
   }
+  .fade-in {
+    animation: fadeIn ease-in 5s;
+  }
+  @keyframes fadeIn{
+    0% {
+      opacity:0.5;
+    }
+    100% {
+      opacity:1;
+    }
+  }
+/* User Input/Question Display area */
+#display {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    color: chocolate;
+    font-size: 80px;
+}
+/* Animation for Ask Me Anything text */
+#spinner {
+    animation-name: spin, depth;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-duration: 3s;
+    text-align: center;
+    font-size: 30px;
+  }
+  /* @keyframes spin {
+    from { transform: rotateY(0deg); }
+    to { transform: rotateY(-360deg); }
+  }
+  @keyframes depth {
+    0 { text-shadow: 0 0 black; }
+    25% { text-shadow: 1px 0 black, 2px 0 black, 3px 0 black, 4px 0 black, 5px 0 black; }
+    50% { text-shadow: 0 0 black; }
+    75% { text-shadow: -1px 0 black, -2px 0 black, -3px 0 black, -4px 0 black, -5px 0 black; }
+    100% { text-shadow: 0 0 black; }
+  } */

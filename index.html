@@ -10,12 +10,16 @@
 </head>
 <body>
     <form>
-        <label for="question" style="margin-right: 1rem;">Ask me anything!</label><br>
-        <input type="text" style="margin-right: 1rem;" id="question" name="question"><br>
-        <input type="button" onclick="ask()" class="buty" type="submit" value="Ask">
+        <label for="question" id="spinner" style="margin-right: 1rem;">Ask me anything!</label><br>
+        <input type="text" style="margin-right: 1rem;" id="quest"><br>
+        <input type="button" onclick="ask()" class="buty" type="submit" value="Ask" id="okie">
     </form>
+    <div id="display">
+
+    </div>
     <div id="answers">
         <img src="./img/magic8ball_start.png" name="canvas" style="width: 550px">
     </div>
+
 </body>
 </html>
