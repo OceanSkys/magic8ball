@@ -57,7 +57,7 @@ function ask() {
         document.querySelector('form').appendChild(reset);
         form.insertBefore(reset, form.children[5]);
         reset.innerText = 'Reset';
-        reset.classList.add('buty2');
+        reset.classList.add('butn2');
         reset.setAttribute('type','button')
     }, 1900);
     setTimeout(() => {
@@ -71,23 +71,5 @@ function ask() {
             document.getElementById('okie').disabled = false;
         })
     }, 2000);
-    // setTimeout(() => {
-    //     window.addEventListener('click', () => {
-    //             document.getElementById('quest').style.display = 'block';
-    //             document.getElementById("quest").value = ' ';
-    //             document.querySelector('p').remove();
-    //             document.getElementById('buty2').remove();
-    //     })
-    // }, 100); 
-    // document.querySelector('form').appendChild(reset);
-    // form.insertBefore(reset, form.children[5]);
-    // reset.innerText = 'Reset';
-    // reset.classList.add('buty2');
-    // document.getElementById('buty2').addEventListener('click', () => {
-    //     document.getElementById('quest').style.display = 'block';
-    //     document.getElementById("quest").value = ' ';
-    //     document.querySelector('p').remove();
-    //     document.getElementById('buty2').remove();
-    // })
 }
 
