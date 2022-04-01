@@ -71,6 +71,10 @@ form {
   max-width: 60px;
   max-height: 35px;
 }
+.buty2 {
+  max-width: 60px;
+  max-height: 35px;
+}
 /* User Input/Question Display area */
 #display {
   display: inline-block;

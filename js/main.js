@@ -22,6 +22,7 @@ function ask() {
     let val = document.getElementById("quest").value;
     let p = document.createElement('p');
     let form = document.querySelector('form');
+    let reset = document.createElement('button');
     // Paragraph styling
     p.innerText = val;
     p.style = "margin-right: 3rem; margin-left: 2rem; "
@@ -35,6 +36,7 @@ function ask() {
     // document.getElementById('display').innerHTML = val; 
     document.getElementById('quest').style.display = 'none';
     //Removes shaking animation
+    
     setTimeout(() => {
         document.querySelector('img').classList.add("animate");
     }, 1700);
@@ -52,29 +54,40 @@ function ask() {
         document.querySelector('img').classList.remove("fade-in");
     }, 1800);
     setTimeout(() => {
-        document.getElementById('test').addEventListener('click', () => {
-                document.getElementById('quest').style.display = 'block';
-                document.getElementById("quest").value = ' ';
-                document.querySelector('p').remove();
+        document.querySelector('form').appendChild(reset);
+        form.insertBefore(reset, form.children[5]);
+        reset.innerText = 'Reset';
+        reset.classList.add('buty2');
+        reset.setAttribute('type','button')
+    }, 1900);
+    setTimeout(() => {
+        // p.classList.remove('spin-anim');
+        document.getElementById('okie').disabled = true;
+        reset.addEventListener('click', () => {
+            document.getElementById('quest').style.display = 'block';
+            document.getElementById("quest").value = ' ';
+            document.querySelector('p').remove();
+            reset.remove();
+            document.getElementById('okie').disabled = false;
         })
-
-        // document.body.addEventListener('keypress', function(event) {
-        //     if (event.key === "Enter") {
-        //         document.getElementById('quest').style.display = 'block';
-        //         document.getElementById("quest").value = ' ';
-        //         document.querySelector('p').remove();
-        //     }
-        // })
-    }, 1000); 
+    }, 2000);
+    // setTimeout(() => {
+    //     window.addEventListener('click', () => {
+    //             document.getElementById('quest').style.display = 'block';
+    //             document.getElementById("quest").value = ' ';
+    //             document.querySelector('p').remove();
+    //             document.getElementById('buty2').remove();
+    //     })
+    // }, 100); 
+    // document.querySelector('form').appendChild(reset);
+    // form.insertBefore(reset, form.children[5]);
+    // reset.innerText = 'Reset';
+    // reset.classList.add('buty2');
+    // document.getElementById('buty2').addEventListener('click', () => {
+    //     document.getElementById('quest').style.display = 'block';
+    //     document.getElementById("quest").value = ' ';
+    //     document.querySelector('p').remove();
+    //     document.getElementById('buty2').remove();
+    // })
 }
-
-// if (document.getElementById('test').addEventListener('click', => {
-//     document.getElementById('quest').style.display = 'block';
-//     document.getElementById("quest").value = ' ';
-//     document.querySelector('p').remove();
-
-
-
-
-
 
