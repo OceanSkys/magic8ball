@@ -1,15 +1,26 @@
 body {
-    background-color: aqua;
+    background-image: url("/img/pexels-ricardo-esquivel-1964471.jpg");
+    background-size: cover;
+    /* width: 100%; */
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 80vh;
+    /* overflow: hidden; */
 }
 form {
+  margin-top: 1rem;
     display: flex;
     justify-content: center;
 }
 /* Magic 8 ball display area */
 #answers {
-    margin-top: 1rem;
-    display: flex;
-    justify-content: center;
+  margin-top: 6rem;
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  left: 50%;
+  right: 50%;;
 }
 /* Animation for Magic 8 Ball */
 .animate {
@@ -46,7 +57,7 @@ form {
     }
   }
   .fade-in {
-    animation: fadeIn ease-in 5s;
+    animation: fadeIn ease 5s;
   }
   @keyframes fadeIn{
     0% {
@@ -56,31 +67,64 @@ form {
       opacity:1;
     }
   }
+.buty {
+  max-width: 60px;
+  max-height: 35px;
+}
 /* User Input/Question Display area */
 #display {
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-    color: chocolate;
-    font-size: 80px;
+  display: inline-block;
+  margin-top: 0px;
+  color:darkblue;
+  /* added font size that changes with viewport */
+  font-size: 4vmin;
+  margin-right: 1rem;
+  font-weight: 800;
+}
+.spin-anim {
+  animation-name: spin;
+  animation-duration: 1500ms;
+  animation-iteration-count: 1;
+  animation-timing-function: linear; 
 }
 /* Animation for Ask Me Anything text */
-#spinner {
-    animation-name: spin, depth;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-duration: 3s;
+#span {
     text-align: center;
     font-size: 30px;
   }
-  /* @keyframes spin {
+  @keyframes spin {
     from { transform: rotateY(0deg); }
     to { transform: rotateY(-360deg); }
   }
   @keyframes depth {
-    0 { text-shadow: 0 0 black; }
+    0% { text-shadow: 0 0 black; }
     25% { text-shadow: 1px 0 black, 2px 0 black, 3px 0 black, 4px 0 black, 5px 0 black; }
     50% { text-shadow: 0 0 black; }
     75% { text-shadow: -1px 0 black, -2px 0 black, -3px 0 black, -4px 0 black, -5px 0 black; }
     100% { text-shadow: 0 0 black; }
-  } */
+  }
+
+  #flexin {
+    position: fixed;
+    z-index: 1;
+    display: flex;
+    flex-wrap: wrap;
+    top: 5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color:rgba(231, 223, 223, 0.2);
+  }
+  @keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
+
+@media screen and (max-width: 768px) {
+  /* For desktop: */
+
+  #span {margin-bottom: 10px;}
+}

@@ -20,23 +20,61 @@ function ask() {
     console.log('You clicked/Entered!')
     let mg = Math.floor(Math.random() * imgs.length);
     let val = document.getElementById("quest").value;
-    // Default starting template for magic8ball
+    let p = document.createElement('p');
+    let form = document.querySelector('form');
+    // Paragraph styling
+    p.innerText = val;
+    p.style = "margin-right: 3rem; margin-left: 2rem; "
+    document.querySelector('form').appendChild(p);
+    form.insertBefore(p, form.children[1])
+    p.setAttribute('id', 'display');
+    // Magic 8 ball baseline set-up
     document.querySelector('img').src = './img/magic8ball_start.png';
-    document.querySelector('img').classList.add("animate");
+    // document.querySelector('img').classList.add("animate");
+    p.classList.add( 'spin-anim','pclass');
+    // document.getElementById('display').innerHTML = val; 
+    document.getElementById('quest').style.display = 'none';
     //Removes shaking animation
     setTimeout(() => {
+        document.querySelector('img').classList.add("animate");
+    }, 1700);
+    setTimeout(() => {
         document.querySelector('img').classList.remove("animate");
-    }, 800);
+    }, 2400);
     // Adds in fade-in animation along with new magic8ball image and displays it
     setTimeout(() => {
         document.querySelector('img').classList.add("fade-in");
-        document.canvas.src = imgs[mg]
-        document.getElementById('display').innerHTML = val;  
-    }, 900);
+        document.canvas.src = imgs[mg] 
+    }, 2900);
     //Removes fade-in animation to restart the process
     setTimeout(() => {
+        // p.classList.remove('spin-anim');
         document.querySelector('img').classList.remove("fade-in");
-    }, 100);
+    }, 1800);
+    setTimeout(() => {
+        document.getElementById('test').addEventListener('click', () => {
+                document.getElementById('quest').style.display = 'block';
+                document.getElementById("quest").value = ' ';
+                document.querySelector('p').remove();
+        })
+
+        // document.body.addEventListener('keypress', function(event) {
+        //     if (event.key === "Enter") {
+        //         document.getElementById('quest').style.display = 'block';
+        //         document.getElementById("quest").value = ' ';
+        //         document.querySelector('p').remove();
+        //     }
+        // })
+    }, 1000); 
 }
+
+// if (document.getElementById('test').addEventListener('click', => {
+//     document.getElementById('quest').style.display = 'block';
+//     document.getElementById("quest").value = ' ';
+//     document.querySelector('p').remove();
+
+
+
+
 
 
